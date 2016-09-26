@@ -17,7 +17,7 @@
 #' #predict change
 #' data("mutmap")
 #' cr = classifyRNA(mutmap)
-#' cr_pred = predict(cr, sample, type="response")
+#' cr_pred = predict(cr, sample, resp="response")
 #' 
 #' #plot ROC curve (no change v. local/global change)
 #' data("mutmap")
