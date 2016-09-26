@@ -43,9 +43,9 @@ getESDC = function(sample, base=sample[1,], margin=1){
   
   #calculate eSDC
   if(dim(sample)[1]==1){
-    eSDC = cor(as.vector(sample), base, method="pearson", use="pairwise.complete.obs")/sqrt(length(sample))
+    eSDC = (1-cor(as.vector(sample), base, method="pearson", use="pairwise.complete.obs"))/sqrt(length(sample))
   } else{
-    eSDC = apply(sample, 1, cor, x=base, method="pearson", use="pairwise.complete.obs")/sqrt(ncol(sample))
+    eSDC = (1-apply(sample, 1, cor, x=base, method="pearson", use="pairwise.complete.obs"))/sqrt(ncol(sample))
   }
   
   #return eSDC
